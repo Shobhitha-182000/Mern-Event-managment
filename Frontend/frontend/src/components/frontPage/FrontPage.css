@@ -1,0 +1,87 @@
+.mainpage-container {
+    background-image: url('./background.jpg');
+    color: white;
+    height: 1000px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-sidenav {
+    margin-top: 10px;
+   background-color: white;
+   background-image: url('./glass.jpg');
+   background-repeat: no-repeat;
+   
+   background-size: cover;
+   color: rgb(61, 58, 58);
+    align-items: center;
+    font-size: larger;
+    border-radius: 20px; 
+    height: 500px;
+    max-width: 100%; 
+    transform: translateX(0);
+}
+ 
+.main-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 80px;
+    
+}
+.btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+}
+
+.main-side {
+    background-color: #ff69b4;  
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;  
+    transition: transform 0.3s ease, z-index 0.3s ease; 
+}
+.main-side-btn {
+    background-color: #ff69b4;  
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;  
+    transition: transform 0.3s ease, z-index 0.3s ease; 
+}
+ .main-side:hover {
+    height: 30px;
+    transform: translate(0, -5px);  
+    z-index: 1; 
+}
+ 
+.main-button:hover {
+    height: 30px;
+    transform: translate(0, -5px);  
+    z-index: 1;  
+}
+.main-side-btn:hover {
+    height: 30px;
+    transform: translate(0, -5px);  
+    z-index: 1;  
+}
+.main-sidenav:hover {
+   
+    transform: translate(0, -5px);  
+    z-index: 1; 
+}
