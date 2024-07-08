@@ -1,0 +1,61 @@
+.updateEvent-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .updateEvent-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .updateEvent-container form {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .updateEvent-container label {
+    font-weight: bold;
+  }
+  
+  .updateEvent-container input,
+  .updateEvent-container textarea,
+  .updateEvent-container select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .updateEvent-container button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .updateEvent-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media screen and (max-width: 768px) {
+    .updateEvent-container {
+      max-width: 500px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .updateEvent-container {
+      max-width: 100%;
+      padding: 15px;
+    }
+  }
+  

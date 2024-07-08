@@ -1,0 +1,147 @@
+ 
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.top_nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #2c3e50;
+    padding: 10px;
+}
+
+.search_container {
+    position: relative;
+}
+
+.search_input {
+    padding: 8px 30px;  
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.search_icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;  
+    cursor: pointer;
+}
+
+.top_nav button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background: #34495e;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.top_nav button:hover {
+    background: #1abc9c;
+}
+
+.sidebar {
+    height: calc(100vh - 0px); 
+    background: #2c3e50;
+    color: white;
+    transition: width 0.3s ease;
+    position: fixed;
+    top: 0px;  
+}
+
+.top_section {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    transition: display 0.3s ease;
+}
+
+.bars {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: margin-left 0.3s ease;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.link:hover {
+    background: #34495e;
+}
+
+.active {
+    background: #1abc9c;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.link_text {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: display 0.3s ease;
+}
+
+main {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+    transition: margin-left 0.3s ease;
+}
+.container input {
+    width: 40%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.container  input:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+ 
+ 
+@media (max-width: 768px) {
+    .sidebar {
+        width: 50px;
+    }
+
+    .logo, .link_text {
+        display: none;
+    }
+
+    .bars {
+        margin-left: 0px;
+    }
+
+    main {
+        margin-left: 50px;
+    }
+}

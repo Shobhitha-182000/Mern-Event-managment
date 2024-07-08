@@ -19,9 +19,13 @@ const eventAdminSchema=new mongoose.Schema(
             type:Date,
             Required:true
         },
-        image:{
-           type:String 
-        }
+        price:{
+            type:Number 
+        },
+        image: {
+            data: Buffer,
+            contentType: String,
+          },
         
     },{timestamps:true}
 )

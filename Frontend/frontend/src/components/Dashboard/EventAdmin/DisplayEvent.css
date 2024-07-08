@@ -1,0 +1,138 @@
+/* DisplayEvent.css */
+
+.display-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: lightblue;
+  }
+  
+  .display-event {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .display-event img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .display-event h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .display-event h5 {
+    margin-bottom: 5px;
+    color: #666;
+  }
+  
+  .display-event h4 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .display-event .edit,
+  .delete {
+    margin-top: 10px;
+    width: 50px;
+    height: 40px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #007bff; /* Adjust as needed */
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booknow {
+    background-color: #28a745;
+    width: 100px;
+    color: white;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.6s ease;
+  }
+  
+  .booknow:hover {
+    background-color: #024711;
+  }
+  
+  .edit {
+    background-color: #ffc107;
+  }
+  
+  .edit:hover {
+    background-color: #866707;
+  }
+  
+  .delete {
+    margin-left: 10px;
+    background-color: #dc3545;
+  }
+  
+  .delete:hover {
+    background-color: #940513;
+  }
+  
+  .book-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+ 
+  
+  .edit-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 238, 238, 0.5);
+    z-index: 999;
+    cursor: pointer;
+    
+  }
+  
+   
+  
+  @media screen and (max-width: 1200px) {
+    .display-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .display-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .display-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  

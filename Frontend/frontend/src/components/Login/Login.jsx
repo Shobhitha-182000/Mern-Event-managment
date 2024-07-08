@@ -30,7 +30,7 @@ const Login = () => {
             localStorage.setItem('token', res.token);
             toast.success('Login successful! Redirecting to dashboard...');
             setTimeout(() => {
-                navigate("/dashboard");  
+                navigate("/side");  
             }, 2000);
         } catch (error) {
             console.error('Error logging in:', error);

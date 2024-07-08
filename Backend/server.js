@@ -1,28 +1,31 @@
- const express=require('express')
- const app=express();
- const mongoose=require('mongoose')
- const User=require('./Models/UserModel')
- const eventAdmin=require('./Models/EventAdminModel')
- const connectDB=require('./utils/db.js')
- const dotenv=require('dotenv')
-const userRoutes=require('./routes/UserRoutes.js')
-const authRoutes=require('./routes/auth.js')
-const adminRoutes=require('./routes/AdminRoutes.js')
-const cors=require('cors')
- //middlewares
- app.use(express.json())
- app.use(cors())
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const User = require("./Models/UserModel");
+const eventAdmin = require("./Models/EventAdminModel");
+const connectDB = require("./utils/db.js");
+const dotenv = require("dotenv");
+const userRoutes = require("./routes/UserRoutes.js");
+const authRoutes = require("./routes/auth.js");
+const adminRoutes = require("./routes/AdminRoutes.js");
+const cors = require("cors");
+const Image = require("./Models/Image.js");
+const multer = require("multer");
+const path = require("path");
 
- connectDB()
+//middlewares
+app.use(express.json());
+app.use(cors());
 
- app.use(userRoutes);
- app.use('/admin',adminRoutes)
+connectDB();
+ 
+ 
+app.use(userRoutes);
+app.use("/admin", adminRoutes);
 //  app.use('/api/auth',authRoutes);
 
- const port=process.env.PORT
- 
-    app.listen(process.env.PORT||8000,()=>{
-        console.log(`Server is running...${port}`)
-     })
- 
- 
+const port = process.env.PORT;
+
+app.listen(process.env.PORT || 8000, () => {
+  console.log(`Server is running...${port}`);
+});

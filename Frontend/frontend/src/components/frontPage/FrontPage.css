@@ -1,87 +1,151 @@
 .mainpage-container {
-    background-image: url('./background.jpg');
     color: white;
-    height: 1000px;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
+    background: linear-gradient(135deg, #5b6996, #ae84e2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.main-sidenav {
-    margin-top: 10px;
-   background-color: white;
-   background-image: url('./glass.jpg');
-   background-repeat: no-repeat;
-   
-   background-size: cover;
-   color: rgb(61, 58, 58);
-    align-items: center;
-    font-size: larger;
-    border-radius: 20px; 
-    height: 500px;
-    max-width: 100%; 
-    transform: translateX(0);
-}
- 
-.main-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin-left: 80px;
-    
-}
-.btn {
+h1 {
     position: absolute;
     top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.btn {
+    position: absolute;
+    top: 60px;  
     right: 20px;
     display: flex;
 }
 
-.main-side {
-    background-color: #ff69b4;  
+.main-side, .main-side-btn {
+    background-color: #eea1c7;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;  
-    transition: transform 0.3s ease, z-index 0.3s ease; 
+    height: 50px;
+    margin-left: 10px;
+    transition: transform 0.3s ease, z-index 0.3s ease;
 }
-.main-side-btn {
-    background-color: #ff69b4;  
+
+.main-button {
+    background-color: #37b916;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;  
-    transition: transform 0.3s ease, z-index 0.3s ease; 
+    height: 50px;
+    margin-left: 10px;
+    font-size: large;
+    transition: transform 0.3s ease, z-index 0.3s ease;
 }
- .main-side:hover {
-    height: 30px;
-    transform: translate(0, -5px);  
-    z-index: 1; 
+
+.main-side:hover, .main-side-btn:hover, .main-button:hover {
+    transform: translateY(-5px);
+    z-index: 1;
 }
- 
-.main-button:hover {
-    height: 30px;
-    transform: translate(0, -5px);  
-    z-index: 1;  
+
+.main-sidenav {
+    margin-top: 100px;  
+    align-items: center;
+    font-size: larger;
+    border-radius: 20px;
+    height: auto;
+    max-width: 100%;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.main-side-btn:hover {
-    height: 30px;
-    transform: translate(0, -5px);  
-    z-index: 1;  
+
+.main-ul {
+    list-style-type: none;
+    padding: 0;
 }
-.main-sidenav:hover {
-   
-    transform: translate(0, -5px);  
-    z-index: 1; 
+
+.main-ul li {
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.main-ul li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.main-ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.main-ul li:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.main-ul li:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.main-ul li:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+.rightside-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media queries for tablets and larger devices */
+@media (min-width: 768px) {
+    .mainpage-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .btn {
+        display: flex;  
+    }
+
+    .main-sidenav, .rightside-nav {
+        width: 45%;
+    }
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+    .main-sidenav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .rightside-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn {
+       
+        display: block;  
+        position: absolute;  
+        top: 60px;  
+        right: 20px;  
+    }
+
+    .main-side, .main-side-btn, .main-button {
+        display: flex;  
+    }
 }
