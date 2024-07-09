@@ -12,7 +12,8 @@ const cors = require("cors");
 const Image = require("./Models/Image.js");
 const multer = require("multer");
 const path = require("path");
-
+const Book=require('./Models/Booking.js')
+const BookingRoutes=require('./routes/BookingRoutes.js')
 //middlewares
 app.use(express.json());
 app.use(cors());
@@ -22,6 +23,7 @@ connectDB();
  
 app.use(userRoutes);
 app.use("/admin", adminRoutes);
+app.use(BookingRoutes)
 //  app.use('/api/auth',authRoutes);
 
 const port = process.env.PORT;

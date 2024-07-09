@@ -29,15 +29,18 @@ const upload = multer({ storage: storage });
 // Routes
 router.get('/event', adminController.getEvents);
 router.post("/save", upload.single("image"), async (req, res) => {
-  const { title, description, location, date, price } = req.body;
+  const { title, description, location, date} = req.body;
   const imageDetails = req.file.filename;
+
+ 
+  const formattedDate = formatDate(date);
 
   try {
     const newEvent = await Event.create({
       title,
       description,
       location,
-      date: new Date(date),
+      date: formattedDate,
       price,
       image: imageDetails,
     });
@@ -47,6 +50,19 @@ router.post("/save", upload.single("image"), async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+ 
+function formatDate(dateString) {
+  const [year, month, day] = dateString.split("-");
+  return `${day}-${month}-${year}`;
+}
+
+ 
+function parseDate(dateString) {
+  const [day, month, year] = dateString.split("-");
+  return new Date(year, month - 1, day);  
+}
+
 router.delete('/event/:id', adminController.deleteEvents);
 router.put('/event/:id',upload.single("image"), adminController.updateEvent);
 router.get('/event/:id', adminController.getEventById);

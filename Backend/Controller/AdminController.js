@@ -76,10 +76,22 @@ exports.deleteEvents = async (req, res) => {
   }
 };
  
+function formatDate(dateString) {
+  const [year, month, day] = dateString.split("-");
+  return `${day}-${month}-${year}`;
+}
+
+ 
+function parseDate(dateString) {
+  const [day, month, year] = dateString.split("-");
+  return new Date(year, month - 1, day);  
+}
+
 exports.updateEvent = async (req, res) => {
   const eventId = req.params.id;
-  const { title, description, location, date, price } = req.body;
+  const { title, description, location, date } = req.body;
   const imageDetails = req.file ? req.file.filename : undefined;
+  const formattedDate = formatDate(date);
 
   try {
     const eventToUpdate = await Event.findById(eventId);
@@ -87,18 +99,18 @@ exports.updateEvent = async (req, res) => {
       return res.status(404).json({ message: "Event not found" });
     }
 
-    
+ 
     eventToUpdate.title = title;
     eventToUpdate.description = description;
     eventToUpdate.location = location;
-    eventToUpdate.date = new Date(date);
-    eventToUpdate.price = price;
-
-     
+    eventToUpdate.date = formattedDate; 
+   
+ 
     if (imageDetails) {
       eventToUpdate.image = imageDetails;
     }
 
+   
     const updatedEvent = await eventToUpdate.save();
     res.status(200).json({ data: updatedEvent, message: "Event updated successfully" });
   } catch (error) {

@@ -113,7 +113,7 @@ const UpdateEvent = () => {
             required
           />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="price">Price:</label>
           <input
             type="number"
@@ -123,7 +123,7 @@ const UpdateEvent = () => {
             onChange={(e) => setPrice(e.target.value)}
             required
           />
-        </div>
+        </div> */}
         <div>
           <label htmlFor="image">Image:</label>
           <input

@@ -1,0 +1,106 @@
+.eventlist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f5;
+  }
+  
+  .eventlist-event {
+    width: 80%;
+    background-color: #dedbe0;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 15px 0;
+    color: #1b1a1a;
+    padding: 15px;
+    font-weight: 300;
+    transition: background-color 0.3s ease;
+  }
+  
+  .eventlist-event:hover {
+    background-color: grey;
+  }
+  
+  .eventlist-event h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .dropdown-icon {
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+  }
+  
+  .eventlist-subevent {
+    margin-top: 10px;
+    background-color: #dedde0;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgb(94, 89, 89);
+  }
+  
+  .eventlist-subevent p {
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .eventlist-booknow {
+    background-color: #fff;
+    color: #6a1b9a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: large;
+  }
+  
+  .eventlist-booknow:hover {
+    background-color: #2cff9d;
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    .eventlist-event {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    .eventlist-event h3 {
+      font-size: 1.2em;
+    }
+  
+    .dropdown-icon {
+      font-size: 1.2em;
+    }
+  
+    .eventlist-booknow{
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .eventlist-event {
+      width: 100%;
+      padding: 8px;
+    }
+  
+    .eventlist-event h3 {
+      font-size: 1em;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .dropdown-icon {
+      font-size: 1em;
+    }
+  
+    .eventlist-booknow {
+      padding: 6px 12px;
+    }
+  }
+  

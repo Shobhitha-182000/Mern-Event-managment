@@ -145,7 +145,10 @@ h1 {
         right: 20px;  
     }
 
-    .main-side, .main-side-btn, .main-button {
+    .main-button {
         display: flex;  
+    }
+    .main-side-btn, .main-side {
+        display: none;  
     }
 }

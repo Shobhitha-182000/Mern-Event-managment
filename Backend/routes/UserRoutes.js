@@ -8,7 +8,7 @@ const JWT_SECRET = 'Shobhitha@18';
 
  
 router.post('/register', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password,name} = req.body;
 
     try {
         const existingUser = await User.findOne({ email });

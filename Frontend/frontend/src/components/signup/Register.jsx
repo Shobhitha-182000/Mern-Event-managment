@@ -56,6 +56,13 @@ const Register = () => {
                     <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} className="register-form-input" required />
                 </div>
+                <div>
+                    {/* <label>Select :</label>
+                     <select name='name'>
+                        <option value="admin" className='option'>Admin</option>
+                        <option value="admin" className='option'>Customer</option>
+                     </select> */}
+                </div>
                 <button type="submit" className="register-submit">Register</button>
             </form>
         </div>

@@ -16,7 +16,7 @@ const eventAdminSchema=new mongoose.Schema(
             Required:[true,'Description is required']
         },
         date:{
-            type:Date,
+            type:String,
             Required:true
         },
         price:{

@@ -18,7 +18,8 @@
     "react-icons": "^5.2.1",
     "react-lottie": "^1.2.4",
     "react-router-dom": "^6.24.1",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "vite-plugin-require": "^1.2.14"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

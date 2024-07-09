@@ -10,6 +10,11 @@ import Sidebar from './components/Dashboard/Sidebar'
 import AddEvent from './components/Dashboard/EventAdmin/AddEvent'
 import DisplayEvent from './components/Dashboard/EventAdmin/DisplayEvent'
 import UpdateEvent from './components/Dashboard/EventAdmin/UpdateEvent'
+import SecurityUserCheck from './components/Dashboard/SecurityUserCheck'
+import Success from './components/Dashboard/EventAdmin/Success'
+import Booking from './components/Dashboard/EventAdmin/Booking'
+import EventList from './components/Dashboard/EventAdmin/EventList'
+import ImagePage from './components/ImagePage'
  
  const App = () => {
    return (
@@ -23,7 +28,11 @@ import UpdateEvent from './components/Dashboard/EventAdmin/UpdateEvent'
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/display' element={<DisplayEvent/>}/>
         <Route path='/edit/:id' element={<UpdateEvent/>}/>
-        
+        <Route path='/security' element={<SecurityUserCheck/>}/>
+        <Route path='/success' element={<Success/>}/>
+        <Route path='/book' element={<Booking/>}/>
+        <Route path='/list' element={<EventList/>}/>
+        <Route path='/image' element={<ImagePage/>}/>
       </Routes>
       </BrowserRouter>
    )
