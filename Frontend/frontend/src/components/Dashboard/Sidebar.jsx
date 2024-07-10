@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaShoppingBag, FaThList } from "react-icons/fa";
-import "./Sidebar.css";
+import { IoMdAddCircle } from "react-icons/io";
+import { HiOutlineLogout } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import DisplayEvent from "./EventAdmin/DisplayEvent";
-import { IoMdAddCircle } from "react-icons/io";
-import { HiOutlineLogout } from "react-icons/hi";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -33,7 +33,7 @@ const Sidebar = () => {
     { path: "/book", name: "Book", icon: <FaShoppingBag /> },
     { path: "/list", name: "Event List", icon: <FaThList /> },
     { path: "https://immensphere.com/", name: "About", icon: <FaUserAlt /> },
-    { path: "/", name: "Logout", icon: <HiOutlineLogout />},
+    { path: "/", name: "Logout", icon: <HiOutlineLogout /> },
   ];
 
   return (
@@ -46,38 +46,31 @@ const Sidebar = () => {
         <button className="signup_btn">Sign Up</button>
         <button className="login_btn">Login</button>
       </div>
-      <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
+      <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="top_section">
-          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo"></h1>
-          <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
-            <FaBars onClick={toggle} />
-          </div>
+          <h1 className="logo" style={{ display: isOpen ? "block" : "none" }}></h1>
         </div>
         {menuItem.map((item, index) => (
-          <div key={index}>
-            <NavLink
-              to={item.path}
-              className="link"
-              activeClassName="active"
-              onClick={() => setIsOpen(false)}
-            >
-              <div style={{ display: isOpen ? "block" : "none" }} className="icon">{item.icon}</div>
-              <div style={{ display: isOpen ? "block" : "none" }} className="link_text">
-                {item.name}
-              </div>
-            </NavLink>
-          </div>
+          <NavLink
+            key={index}
+            to={item.path}
+            className="link"
+            activeClassName="active"
+            style={{ display: isOpen ? "flex" : "none" }}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="link_text">{item.name}</div>
+          </NavLink>
         ))}
       </div>
-      <main>
-      
-      <DisplayEvent events={events} />
+      <div className="bars" onClick={toggle}>
+        <FaBars />
+      </div>
+      <main className="main">
+        <DisplayEvent events={events} />
       </main>
     </div>
   );
 };
 
 export default Sidebar;
-
-
- 
