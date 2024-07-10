@@ -36,7 +36,7 @@ const navigate=useNavigate();
             
         </ul><br/>
         <br/>
-        <button className='main-button' onClick={()=>navigate('/side')}>want to know more about?</button>
+        <button className='main-button' onClick={()=>navigate('/register')}>want to know more about?</button>
       </div>
       <div className='rightside-nav'>
       <Lottie 

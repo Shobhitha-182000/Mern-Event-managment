@@ -11,7 +11,7 @@ const Event = require("../Models/EventAdminModel");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     
-    const imagesPath = path.join(__dirname, '..', '..', 'Frontend', 'frontend', 'src', 'images');
+    const imagesPath = path.join(__dirname, '..', '..', 'Frontend', 'frontend', 'public');
     cb(null, imagesPath);
   },
   filename: function (req, file, cb) {
@@ -41,7 +41,6 @@ router.post("/save", upload.single("image"), async (req, res) => {
       description,
       location,
       date: formattedDate,
-      price,
       image: imageDetails,
     });
     res.status(200).json({ data: newEvent, message: "Event created successfully" });

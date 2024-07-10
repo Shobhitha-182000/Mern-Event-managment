@@ -97,10 +97,15 @@
   
     .dropdown-icon {
       font-size: 1em;
+      margin-bottom: 20px;
+      margin-left: 90%;
     }
   
     .eventlist-booknow {
       padding: 6px 12px;
+    }
+    .eventlist-booknow:hover {
+      background-color: #2cff9d;
     }
   }
   

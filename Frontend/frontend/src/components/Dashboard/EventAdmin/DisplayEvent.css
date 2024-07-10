@@ -1,4 +1,4 @@
-/* DisplayEvent.css */
+ 
 
 .display-container {
   display: grid;
@@ -124,6 +124,10 @@
 @media screen and (max-width: 1200px) {
   .display-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+  }
+  .display-event{
+    margin-left: 0;
   }
 }
 
@@ -131,10 +135,19 @@
   .display-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .display-event{
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .display-container {
     grid-template-columns: 1fr;
+  background-color: white;
+    padding-left: 1px;
+  }
+  .display-event{
+    margin: 0;
+  
   }
 }

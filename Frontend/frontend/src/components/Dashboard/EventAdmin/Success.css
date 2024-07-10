@@ -6,29 +6,33 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
- .lottie-an{
+.lottie-an {
     margin-top: 100px;
- }
+    width: 100%;
+    max-width: 600px;  
+    height: auto; 
+}
 
 .success-container h1 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
- 
 @media (max-width: 768px) {
     .success-container {
         padding: 30px;
     }
 
-    .tick-mark {
-        font-size: 36px;
-        margin-bottom: 15px;
-    }
+    
 
     .success-container h1 {
         font-size: 20px;
         margin-bottom: 8px;
+    }
+
+    .lottie-an {
+        margin-top: 100px;
+        margin-right: 0;  
     }
 }
 
@@ -45,5 +49,21 @@
     .success-container h1 {
         font-size: 18px;
         margin-bottom: 6px;
+    }
+
+    .lottie-an {
+        margin-top: 100px;
+        max-width: 300px;  
+        height: auto;  
+    }
+}
+@media (max-width: 1024px) {
+    .success-container {
+        padding: 10px;  
+    }
+
+    .lottie-an {
+        max-width: 200px;  
+        margin-top: 30px;  
     }
 }

@@ -9,6 +9,7 @@
     justify-content: flex-end;
     background: #2c3e50;
     padding: 10px;
+    height: 50px;
 }
 
 .search_container {
@@ -38,7 +39,7 @@
     margin-left: 10px;
     padding: 5px 10px;
     font-size: 14px;
-    background: #34495e;
+    background: #5e5a34;
     border: none;
     color: white;
     cursor: pointer;
@@ -57,6 +58,7 @@
     position: fixed;
     top: 0px;  
     width: 200px;  
+    height: 50px;
 }
 
 .top_section {
@@ -107,7 +109,7 @@
 }
 
 main {
-    margin-left: 200px;
+    margin-left: 10px;
     padding: 20px;
     width: calc(100% - 200px);
     transition: margin-left 0.3s ease;
@@ -129,14 +131,21 @@ main {
 
  
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
     .search_input {
         width: 150px;
     }
-
+    main {
+        margin-left: 200px;
+    }
     .top_nav button {
-        padding: 5px 8px;
+        /* padding: 5px 8px; */
         font-size: 12px;
+    }
+    .sidebar {
+        height: calc(100vh - 0px); 
+        
+        width: 200px;  
     }
 }
 
@@ -169,6 +178,12 @@ main {
 }
 
 @media (max-width: 480px) {
+    /* main {
+        margin-left: 200px;
+        padding: 20px;
+        width: calc(100% - 200px);
+        transition: margin-left 0.3s ease;
+    } */
     .top_nav {
         flex-direction: column;
         align-items: flex-start;

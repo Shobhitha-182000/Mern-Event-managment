@@ -90,7 +90,7 @@
     }
 }
 
-/* Media Queries */
+ 
 
  
 @media (min-width: 768px) {
@@ -99,7 +99,9 @@
     }
     
     form {
-        max-width: 600px;
+        margin-bottom: 200px;  
+        /* width: 15%; */
+        /* max-width: 100px; */
     }
 }
 
@@ -108,8 +110,9 @@
     .login-title {
         font-size: 2rem;  
     }
-
-    form {
-        padding: 1.5rem;
+   .login-container form {
+    margin-bottom: 300px;  
+    width: 85%;
+    padding: 1.5rem;
     }
 }
