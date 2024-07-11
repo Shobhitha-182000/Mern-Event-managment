@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaShoppingBag, FaThList } from "react-icons/fa";
+import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaShoppingBag, FaThList, FaUserCheck } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
@@ -39,12 +39,11 @@ const Sidebar = () => {
   return (
     <div className="container">
       <div className="top_nav">
-        <form>
-          <input type="text" />
+        <form className="search_container">
+          <input type="text" className="search_input" />
           <button className="search_btn">Search</button>
         </form>
-        <button className="signup_btn">Sign Up</button>
-        <button className="login_btn">Login</button>
+        <button className="login_btn"><FaUserCheck /></button>
       </div>
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="top_section">

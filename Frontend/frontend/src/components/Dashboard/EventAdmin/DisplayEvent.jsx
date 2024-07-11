@@ -49,10 +49,6 @@ const DisplayEvent = () => {
     setIsModalOpen(false);
   };
 
-  const getImagePath = (imageName) => {
-    return `../images/${imageName}`;
-  };
-
   return (
     <div className="display-container">
       {events.length > 0 ? (
