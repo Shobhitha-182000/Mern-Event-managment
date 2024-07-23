@@ -14,16 +14,19 @@ const multer = require("multer");
 const path = require("path");
 const Book=require('./Models/Booking.js')
 const BookingRoutes=require('./routes/BookingRoutes.js')
+const GeminiApiRoutes=require('./routes/GeminiApiRoutes.js')
 //middlewares
 app.use(express.json());
 app.use(cors());
 
 connectDB();
+require('./utils/GeminiApi.js')
  
  
 app.use(userRoutes);
 app.use("/admin", adminRoutes);
 app.use(BookingRoutes)
+app.use('/api/chat',GeminiApiRoutes)
 //  app.use('/api/auth',authRoutes);
 
 const port = process.env.PORT;

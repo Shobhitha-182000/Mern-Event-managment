@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaShoppingBag, FaThList, FaUserCheck } from "react-icons/fa";
+import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaShoppingBag, FaThList, FaUserClock } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import DisplayEvent from "./EventAdmin/DisplayEvent";
 import "./Sidebar.css";
+import { SiGooglechat } from "react-icons/si";
+import GeminiChatSupport from "./ChatSupport/GeminiChatSupport";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [events, setEvents] = useState([]);
+  const [isChatBoxOpen, setChatBoxOpen] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -24,7 +27,8 @@ const Sidebar = () => {
     fetchEvents();
   }, []);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggleSidebar = () => setIsOpen(!isOpen);
+  const toggleChatBox = () => setChatBoxOpen(!isChatBoxOpen);
 
   const menuItem = [
     { path: "/side", name: "Dashboard", icon: <FaTh /> },
@@ -39,17 +43,13 @@ const Sidebar = () => {
   return (
     <div className="container">
       <div className="top_nav">
-        <form className="search_container">
-          <input type="text" className="search_input" />
-          <button className="search_btn">Search</button>
-        </form>
-        <button className="login_btn"><FaUserCheck /></button>
+        <button className="login_btn"><FaUserClock title="user" /></button>
       </div>
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="top_section">
           <h1 className="logo" style={{ display: isOpen ? "block" : "none" }}></h1>
         </div>
-        {menuItem.map((item, index) => (
+        {isOpen && menuItem.map((item, index) => (
           <NavLink
             key={index}
             to={item.path}
@@ -62,12 +62,22 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </div>
-      <div className="bars" onClick={toggle}>
+      <div className="bars" onClick={toggleSidebar}>
         <FaBars />
       </div>
       <main className="main">
         <DisplayEvent events={events} />
       </main>
+      {isChatBoxOpen && (
+        <div className="right-corner">
+          <GeminiChatSupport onClose={toggleChatBox} />
+        </div>
+      )}
+      {!isChatBoxOpen && (
+        <div className="right-corner" onClick={toggleChatBox}>
+         <div className="icon-chat"><SiGooglechat /></div>  
+        </div>
+      )}
     </div>
   );
 };
