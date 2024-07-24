@@ -159,7 +159,7 @@
   .display-event {
     margin: 8px;  
     width: calc(100% - 16px);  
-    background-color: rgb(235, 235, 235);
+    /* background-color: rgb(235, 235, 235); */
   }
   
   .button-container {

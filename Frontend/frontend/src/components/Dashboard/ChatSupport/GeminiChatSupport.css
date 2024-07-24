@@ -1,11 +1,11 @@
  
 .main-container {
     /* background-color: rgb(240, 239, 241); */
-    background-color: #677b8f;
+    background-color: #f5f8fc;
     margin: 20px auto;
     padding: 5px;
     /* width: 90%; */
-    width: 400px;
+    width: 350px;
     border-radius: 10px ;
     border: 1px solid grey;
     box-shadow: 0 4px 8px rgba(219, 209, 209, 0.2);
@@ -15,7 +15,8 @@
     background-color: white;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    height: 350px;
+    height: 300px;
+    
     padding: 10px;
     overflow-y: auto;
     /* border: 1px solid grey; */
@@ -101,4 +102,14 @@ h5 {
     background-color: #e0e0e0;  
     border: 1px solid #bdbdbd;
     margin-right: 80px;
+}
+@media (max-width:540px) {
+    .main-container{  
+        width: 280px;
+        background-color: #e2e6e9;
+    }
+    .chat-container{
+        height: 280px;
+    }
+    
 }

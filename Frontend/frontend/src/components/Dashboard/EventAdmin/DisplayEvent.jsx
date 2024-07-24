@@ -54,10 +54,10 @@ const DisplayEvent = () => {
       {events.length > 0 ? (
         events.map((event, index) => (
           <div className="display-event" key={index}>
-            <img
+            {/* <img
               src={'./'+event.image}
               alt={event.title}
-            />
+            /> */}
             <h3>{event.title}</h3>
             <h5>{event.description}</h5>
             <h5>{event.location}</h5>
