@@ -64,7 +64,11 @@ const Register = () => {
                      </select> */}
                 </div>
                 <button type="submit" className="register-submit">Register</button>
+                <div className="login-btn">
+                <p style={{color:'#fff'}}>Already have an account?<a href="/login">Click here</a></p>
+            </div>
             </form>
+            
         </div>
     );
 };

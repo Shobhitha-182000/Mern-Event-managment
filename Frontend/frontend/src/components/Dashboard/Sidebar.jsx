@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaShoppingBag, FaThList, FaUserClock } from "react-icons/fa";
 import { IoMdAddCircle } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import DisplayEvent from "./EventAdmin/DisplayEvent";
 import "./Sidebar.css";
@@ -13,18 +13,35 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [events, setEvents] = useState([]);
   const [isChatBoxOpen, setChatBoxOpen] = useState(false);
+  const userName1=localStorage.getItem('username');
+  const Navigate=useNavigate();
 
   useEffect(() => {
+    if(userName1){
     const fetchEvents = async () => {
+    
+          
+      
       try {
+        console.log('username',userName1);
+        
+        
         const response = await axios.get("http://localhost:3000/admin/event");
         setEvents(response.data.data);
       } catch (error) {
         console.error("Error fetching events:", error);
       }
-    };
+    }
 
     fetchEvents();
+  }
+  else{
+    alert('you have to login first to access this page');
+    Navigate('/login')
+  }
+     
+
+  
   }, []);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
@@ -43,7 +60,7 @@ const Sidebar = () => {
   return (
     <div className="container">
       <div className="top_nav">
-        <button className="login_btn"><FaUserClock title="user" /></button>
+        <button className="login_btn" title={userName1}><FaUserClock title={userName1} /></button>
       </div>
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="top_section">

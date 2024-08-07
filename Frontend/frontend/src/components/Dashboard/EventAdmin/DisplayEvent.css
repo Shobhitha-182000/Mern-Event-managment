@@ -1,76 +1,108 @@
 .display-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;  
   padding: 20px;
   background-color: rgb(221, 225, 226);
 }
 
 .display-event {
+  color: rgb(5, 102, 73);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #ccc;
-  padding: 20px;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 90%;  
+  overflow: hidden;
+  padding: 5px;
+  /* w
+  aspect-ratio: 1 / 1; Maintain aspect ratio */
+  height: 350px;  
+  box-sizing: border-box;  
 }
 
+ 
 .display-event img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 120px;
+  object-fit: cover;
+  background-color: #e6eee7;
+  border-radius: 8px 8px 0 0;
   margin-bottom: 10px;
 }
 
 .display-event h3,
 .display-event h5,
 .display-event h4 {
+  margin: 0 10px;
+}
+
+.display-event h5 {
+  font-size: small;
+}
+
+.display-event .title {
+  margin-left: 10px;
   margin-bottom: 10px;
 }
 
 .display-event h4 {
   font-weight: bold;
   color: #333;
-  margin-top: auto;  
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
-.button-container {
+.display-event .button-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  align-items: center;
+  padding: 0 10px;
+  margin-top: auto;
+  
 }
 
-.display-event .edit,
-.display-event .delete,
-.display-event .booknow {
+.display-event .button-container .btn {
   cursor: pointer;
   color: #fff;
-  border: none;
+  border: 1px solid white;
+  height: 23px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  margin: 0 2px;
+  flex: 1;
 }
 
 .display-event .edit {
-  background-color: #ffc107;
+  
+  border: 1px solid rgb(175, 175, 175);
+ margin-left: 130px;
+  background-color: #ecd353;
 }
 
 .display-event .edit:hover {
-  background-color: #866707;
+  background-color: #dab30a;
 }
 
 .display-event .delete {
-  background-color: #dc3545;
+  border: 1px solid rgb(175, 175, 175);
+  background-color: #f35171;
 }
 
 .display-event .delete:hover {
-  background-color: #940513;
+  background-color: #f1b0b7;
 }
 
 .display-event .booknow {
+  border: 1px solid rgb(175, 175, 175);
+  color: white;
+  border-radius: 5px;
   background-color: #28a745;
 }
 
@@ -116,35 +148,45 @@
   cursor: pointer;
 }
 
+/* Media Queries */
 @media screen and (max-width: 1200px) {
   .display-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background-color: white;
-    padding-left: 15px;
+    padding: 15px;
     font-size: 16px;
-  }
-
-  .display-event {
-    margin-left: 0;
-  }
-  .display-event .delete{
-    margin-right: 600px;
   }
 }
 
 @media screen and (max-width: 992px) {
   .display-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background-color: white;
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .display-container {
     grid-template-columns: 1fr;
     background-color: white;
-    padding-left: 15px;
-    font-size: 16px;
+    padding: 10px;
   }
 
   .display-event {
-    margin-left: 0;
+    margin: 8px;
+    width: calc(100% - 16px);
   }
-  .display-event .delete{
-    margin-right: 50px;
+
+  .display-event .button-container {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .display-event .button-container .btn {
+    margin: 5px 0;
+    width: 100%;
   }
 }
 
@@ -153,25 +195,20 @@
     grid-template-columns: 1fr;
     background-color: white;
     width: 100%;
-    padding: 1px; 
-  }
-  
-  .display-event {
-    margin: 8px;  
-    width: calc(100% - 16px);  
-    /* background-color: rgb(235, 235, 235); */
-  }
-  
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 5px;
   }
 
-  .display-event .booknow {
-    margin: 0;  
+  .display-event {
+    margin: 8px;
+    width: calc(100% - 16px);
   }
-  .display-event .delete{
-    margin-right: 50px;
+
+  .display-event .button-container {
+    display: flex;
+  }
+
+  .display-event .button-container .btn {
+    margin: 5px 0;
+    width: 100%;
   }
 }

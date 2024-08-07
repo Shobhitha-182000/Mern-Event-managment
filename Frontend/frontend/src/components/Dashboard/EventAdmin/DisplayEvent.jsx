@@ -26,7 +26,7 @@ const DisplayEvent = () => {
   }, []);
 
   const editHandler = (id) => {
-    navigate(`/edit/${id}`); 
+    navigate(`/edit/${id}`);
   };
 
   const deleteHandler = (id) => {
@@ -54,15 +54,24 @@ const DisplayEvent = () => {
       {events.length > 0 ? (
         events.map((event, index) => (
           <div className="display-event" key={index}>
-            {/* <img
-              src={'./'+event.image}
+            <div className="displayimageblock">
+            <img
+              src={event.image ? `./public/${event.image}` : '/path/to/default-image.jpg'}
               alt={event.title}
-            /> */}
+            />
+            </div>
+           
+            <div className="title">
             <h3>{event.title}</h3>
+            </div>
+            <div className="description">
             <h5>{event.description}</h5>
+            </div>
+             
             <h5>{event.location}</h5>
+            
             <h4>{event.date}</h4>
-            {/* <h4><LiaRupeeSignSolid />{event.price}</h4> */}
+            <div className="btncontainer"> 
             <div className="button-container">
               <button className="edit" onClick={() => editHandler(event._id)}>
                 <BiSolidEdit />
@@ -72,6 +81,7 @@ const DisplayEvent = () => {
               </button>
               <button className="booknow" onClick={bookHandler}>Free Book</button>
             </div>
+          </div>
           </div>
         ))
       ) : (

@@ -43,6 +43,7 @@ router.post("/save", upload.single("image"), async (req, res) => {
       date: formattedDate,
       image: imageDetails,
     });
+    console.log(newEvent)
     res.status(200).json({ data: newEvent, message: "Event created successfully" });
   } catch (error) {
     console.log(error);

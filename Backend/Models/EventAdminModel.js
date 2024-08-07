@@ -23,8 +23,7 @@ const eventAdminSchema=new mongoose.Schema(
             type:Number 
         },
         image: {
-            data: Buffer,
-            contentType: String,
+             type:String,
           },
         
     },{timestamps:true}

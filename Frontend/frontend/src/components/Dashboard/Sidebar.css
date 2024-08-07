@@ -145,7 +145,7 @@
 
 .main {
   padding: 20px;
-  margin-left: 200px;
+  margin-left: 180px;
   transition: margin-left 0.3s ease;
   width: calc(100% - 200px);
   height: calc(100vh - 50px);
