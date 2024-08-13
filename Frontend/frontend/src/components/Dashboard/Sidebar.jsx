@@ -13,36 +13,26 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [events, setEvents] = useState([]);
   const [isChatBoxOpen, setChatBoxOpen] = useState(false);
-  const userName1=localStorage.getItem('username');
-  const Navigate=useNavigate();
+  const userName1 = localStorage.getItem('username');
+  const Navigate = useNavigate();
 
   useEffect(() => {
-    if(userName1){
-    const fetchEvents = async () => {
-    
-          
-      
-      try {
-        console.log('username',userName1);
-        
-        
-        const response = await axios.get("http://localhost:3000/admin/event");
-        setEvents(response.data.data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
+    if (userName1) {
+      const fetchEvents = async () => {
+        try {
+          const response = await axios.get("http://localhost:3000/admin/event");
+          setEvents(response.data.data);
+        } catch (error) {
+          console.error("Error fetching events:", error);
+        }
       }
+
+      fetchEvents();
+    } else {
+      alert('You have to login first to access this page');
+      Navigate('/login');
     }
-
-    fetchEvents();
-  }
-  else{
-    alert('you have to login first to access this page');
-    Navigate('/login')
-  }
-     
-
-  
-  }, []);
+  }, [userName1, Navigate]);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const toggleChatBox = () => setChatBoxOpen(!isChatBoxOpen);
@@ -60,7 +50,9 @@ const Sidebar = () => {
   return (
     <div className="container">
       <div className="top_nav">
-        <button className="login_btn" title={userName1}><FaUserClock title={userName1} /></button>
+        <button className="login_btn" title={userName1}>
+          <FaUserClock title={userName1} size={20} />
+        </button>
       </div>
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
         <div className="top_section">
@@ -82,7 +74,7 @@ const Sidebar = () => {
       <div className="bars" onClick={toggleSidebar}>
         <FaBars />
       </div>
-      <main className="main">
+      <main className={`main ${isOpen ? "" : "expanded"}`}>
         <DisplayEvent events={events} />
       </main>
       {isChatBoxOpen && (
@@ -92,7 +84,7 @@ const Sidebar = () => {
       )}
       {!isChatBoxOpen && (
         <div className="right-corner" onClick={toggleChatBox}>
-         <div className="icon-chat"><SiGooglechat /></div>  
+          <div className="icon-chat"><SiGooglechat /></div>  
         </div>
       )}
     </div>

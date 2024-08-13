@@ -1,73 +1,101 @@
-.register-container {
+ 
+.register-form-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    font-family: 'Arial', sans-serif;
+    align-items: center;
+    height: 100vh;  
+    background: rgba(240, 236, 236, 0.5);  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+ 
+    
+}
+
+.register-container {
+    /* background: #ffffff;  */
+    padding: 1rem;  
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+    width: 100%;
+    max-width: 350px; /* Max width of the form */
+    color: #333; /* Dark color for text */
+    animation: fadeIn 0.5s ease-in-out;
+     background-color: linear-gradient(135deg, #6e8efb, #a777e3);
 }
 
 .register-title {
-    font-size: 2.5rem;
-    color: #fff;
+    font-size: 1.5rem; /* Adjusted title size for compact form */
+    color: #333; /* Dark color for title */
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease-in-out;
+    text-align: center; /* Centered title */
 }
 
 .register-container form {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-    width: 80%; /* Example width for large screens */
-    max-width: 600px; /* Example maximum width for large screens */
-}
-
-.register-container form div {
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; 
+    border-radius: 15px; 
+    
 }
 
 .register-container label {
-    display: block;
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
+    font-size: 1.0rem;
+    color: #7e7676;  
+    font-weight: bold;
 }
 
-.register-container .register-form-input, select {
+.register-form-input {
     width: 100%;
-    padding: 0.5rem;
-    border: none;
+    padding: 0.5rem; /* Compact padding */
+    border: 1px solid #ccc; /* Light gray border */
     border-radius: 5px;
-    font-size: 1rem;
-    transition: transform 0.2s ease-in-out;
+    font-size: 0.9rem;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .register-form-input:focus {
-    transform: scale(1.05);
+    border-color: #4d4f52; /* Blue border on focus */
     outline: none;
 }
 
 .register-submit {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.5rem; 
     border: none;
     border-radius: 5px;
-    background-color: #fff;
-    color: #6e8efb;
-    font-size: 1rem;
+    background-color: #2ec508;  
+    color: #fff;  
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
 .register-submit:hover {
-    background-color: #9454e2;
-    color: #fff;
+    background-color: #3ee44c;  
 }
 
+.login-btn {
+    text-align: center; /* Centered login link */
+    margin-top: 0.75rem;
+}
+
+.login-btn p {
+    color: #333;
+}
+
+.login-btn a {
+    color: #0056b3; /* Link color */
+    text-decoration: none;
+}
+
+.login-btn a:hover {
+    text-decoration: underline;
+}
+
+/* Keyframe animations for fading effects */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -79,45 +107,25 @@
     }
 }
 
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
- 
-@media (max-width: 1024px) {
-    .register-container form {
-        width: 50%;  
-        
-        padding: 1.5rem;
-    }
-}
-
+/* Responsive styles */
 @media (max-width: 768px) {
-    .register-container form {
-        width: 95%;  
-        padding: 1.5rem;  
+    .register-container {
+        width: 90%; /* Adjusted width for smaller screens */
+        padding: 1rem;
     }
 
     .register-title {
-        font-size: 2rem; 
+        font-size: 1.4rem;
     }
 }
+
 @media (max-width: 480px) {
-    .register-container form {
-        margin-bottom: 300px;  
-        width: 85%;
-        padding: 1.5rem;
-        
+    .register-container {
+        width: 95%; /* Adjusted width for mobile screens */
+        padding: 1rem;
     }
-    
+
     .register-title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }

@@ -1,25 +1,19 @@
 import React from 'react';
 import './Success.css';
-import Lottie from 'react-lottie';
-import animationData from './Animation - 1720433990174.json';
 
 const Success = () => {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
-    
     return (
         <div className="success-container">
             <h1>Thanks for Booking!</h1>
             <br/>
             <br/>
-            <Lottie className='lottie-an' options={defaultOptions} />
-            {/* <h1>Your application has been received.</h1> */}
+            <div className="tick-container">
+                <svg className="tick-mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12l5 5L22 4" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                 
+            </div>
+            <h3>We will get back you soon!!!!</h3>
         </div>
     );
 }

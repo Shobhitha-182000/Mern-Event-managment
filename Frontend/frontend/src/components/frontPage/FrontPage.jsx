@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import './FrontPage.css'
 import Lottie from 'react-lottie'
 import animationData from './Animation - 1720154630509.json'
+import Register from '../signup/Register';
 
 const FrontPage = () => {
+  const [showSignup,seShowSignup]=useState(false);
+  const [openSignup,setOpenSignup]=useState(false);
+  const [closeSignup,Signup]=useState(false);
  
 const navigate=useNavigate(); 
 
@@ -20,9 +24,12 @@ const navigate=useNavigate();
 
   return (
     <div className='mainpage-container'>
-      <h1><u>Event Management</u></h1> 
+      {/* <h1><u>Event Management</u></h1>  */}
        <div className='btn'>
        <button className='main-side' onClick={()=>navigate('/register')}>Sign up</button>
+       {showSignup&& <div className='signup'>
+          <Register/>
+        </div>}
        <button className='main-side-btn' onClick={()=>navigate('/login')}>Log in</button>
        </div>
       <div className='main-sidenav'>

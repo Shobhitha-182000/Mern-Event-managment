@@ -28,7 +28,7 @@ const Login = () => {
             console.log(res);  
             
             localStorage.setItem('token', res.token);
-            localStorage.setItem('username',res.user.username)
+            localStorage.setItem('username',res.user.username);
             toast.success('Login successful! Redirecting to dashboard...');
             setTimeout(() => {
                 navigate("/side");  
